@@ -20,6 +20,14 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): number[]
     return nums1
 };
 
+// function merge(nums1: number[], m: number, nums2: number[], n: number): number[] {
+//     for (let i = m, j = 0; j < n; i++, j++) {
+//         nums1[i] = nums2[j];
+//     }
+
+//     return nums1.sort((a, b) => a - b);
+// };
+
 const nums1 = [1,2,3,0,0,0]
 const m = 3;
 const nums2 = [2,5,6]
