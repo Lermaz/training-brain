@@ -7,7 +7,7 @@ function solution(queries: string[][]): string[] {
     let lo = 0, hi = sorted.length;
     while (lo < hi) {
       const mid = (lo + hi) >> 1;
-      if (sorted[mid] < target) lo = mid + 1;
+      if (sorted[mid]! < target) lo = mid + 1;
       else hi = mid;
     }
     return lo;
@@ -18,7 +18,7 @@ function solution(queries: string[][]): string[] {
     let lo = 0, hi = sorted.length;
     while (lo < hi) {
       const mid = (lo + hi) >> 1;
-      if (sorted[mid] <= target) lo = mid + 1;
+      if (sorted[mid]! <= target) lo = mid + 1;
       else hi = mid;
     }
     return lo;
@@ -56,3 +56,19 @@ function solution(queries: string[][]): string[] {
 
   return res;
 }
+
+// queries: [["ADD","1"], ["ADD","2"], ["ADD","5"], ["ADD","2"], ["EXISTS","2"], ["EXISTS","5"], ["EXISTS","1"], ["EXISTS","4"], ["EXISTS","3"], ["EXISTS","0"]]
+// result: [ "", "", "", "", "true", "true", "true", "false", "false", "false" ]
+const queries = [
+  ["ADD","1"], 
+  ["ADD","2"], 
+  ["ADD","5"],
+  ["ADD","2"],
+  ["EXISTS","2"],
+  ["EXISTS","5"],
+  ["EXISTS","1"],
+  ["EXISTS","4"],
+  ["EXISTS","3"],
+  ["EXISTS","0"]
+];
+console.log("Result: ", solution(queries));
