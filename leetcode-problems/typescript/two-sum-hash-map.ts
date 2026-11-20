@@ -11,7 +11,7 @@ function twoSum(nums: number[], target: number): number[] {
     
     return []
 };
-
+// 3: 0, 2: 1, 
 const nums: number[] = [3,2,4];
 const target: number = 6;
 console.log("Result:", twoSum(nums, target))
