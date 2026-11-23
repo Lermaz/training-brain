@@ -1,12 +1,11 @@
 function reverseWords(s: string): string {
     let reverse = s.split(" ").filter(n => n);
-    
     let res = "";
-    console.log("reverse", reverse.sort())
-    for (let i = 0; i < reverse.length - 1; i++) {
+
+    for (let i = reverse.length - 1; i > 0; i--) {
         if (reverse[i]) res += reverse[i] + " ";
     }
-    res += reverse[reverse.length - 1]
+    res += reverse[0]
     return res;
 };
 
