@@ -16,11 +16,7 @@ function convert(s: string, numRows: number): string {
         idx += d;
     }
 
-    for (let i = 0; i < numRows; i++) {
-        rows[i] = rows[i].join('');
-    }
-
-    return rows.join('');   
+    return rows.map(row => row.join('')).join('');
 };
 
 // function convert(s: string, numRows: number): string {
