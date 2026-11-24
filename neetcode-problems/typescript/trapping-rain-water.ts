@@ -15,6 +15,7 @@ class Solution {
         let res = 0;
 
         while (l < r) {
+            console.log("tes", leftMax, rightMax)
             if (leftMax < rightMax) {
                 l++;
                 leftMax = Math.max(leftMax, height[l]!);
@@ -25,7 +26,7 @@ class Solution {
                 res += rightMax - height[r]!;
             }
         }
-        
+
         return res;
     }
 }
