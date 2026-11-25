@@ -1,20 +1,38 @@
 enum Permission {
-    Read = 1 << 0,    // 1
-    Write = 1 << 1,   // 2
-    Execute = 1 << 2, // 4
+    Read = 1,
+    Write = 2,
+    Execute = 4,
 }
 
-const PERMISSION_FLAGS = [
-    Permission.Read,
-    Permission.Write,
-    Permission.Execute,
-] as const;
 
 function getPermissionList(permission: Permission): string[] {
-    return PERMISSION_FLAGS
-        .filter((flag) => (permission & flag) === flag)
-        .map((flag) => Permission[flag]);
+    const arr: string[] = [];
+    for (const item in Permission) {
+        console.log("item", item)
+        if ((permission & +Permission[item]!) === +Permission[item]!) {
+            arr.push(item);
+        }
+    }
+    return [...arr];
 }
+
+// enum Permission {
+//     Read = 1 << 0,    // 1
+//     Write = 1 << 1,   // 2
+//     Execute = 1 << 2, // 4
+// }
+
+// const PERMISSION_FLAGS = [
+//     Permission.Read,
+//     Permission.Write,
+//     Permission.Execute,
+// ] as const;
+
+// function getPermissionList(permission: Permission): string[] {
+//     return PERMISSION_FLAGS
+//         .filter((flag) => (permission & flag) === flag)
+//         .map((flag) => Permission[flag]);
+// }
 
 console.log(getPermissionList(Permission.Read | Permission.Write | Permission.Execute));
 // ["Read", "Write", "Execute"]
