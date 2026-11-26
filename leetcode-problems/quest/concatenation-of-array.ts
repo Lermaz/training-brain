@@ -1,12 +1,10 @@
 function getConcatenation(nums: number[]): number[] {
-    let ans = [];
     const n = nums.length;
+    let ans = [];
     let rep = 0;
 
     while (rep < 2) {
-        for (let i = 0; i < n; i++) {
-            ans.push(nums[i]);
-        }
+        for (let i = 0; i < n; i++) ans.push(nums[i]);
         rep++;
     }
 
