@@ -27,7 +27,7 @@ function buildArray(target: number[], n: number): string[] {
     let ans: string[] = [];
     let next = 1;
 
-    for (let t of target){
+    for (let t of target) {
         while (next < t){
             ans.push('Push','Pop');
             next++;
